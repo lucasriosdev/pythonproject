@@ -25,8 +25,8 @@ FinViz is a modern, interactive financial data visualization dashboard built wit
 
 1. Clone the repository:
    ```
-   git clone https://github.com/yourusername/finviz.git
-   cd finviz
+   git clone https://github.com/lucasriosdev/pythonproject
+   cd pythonproject
    ```
 
 2. Create a virtual environment:
@@ -53,7 +53,7 @@ FinViz is a modern, interactive financial data visualization dashboard built wit
 ## Project Structure
 
 ```
-finviz/
+pythonproject/
 ├── app.py                  # Main Flask application
 ├── requirements.txt        # Python dependencies
 ├── static/                 # Static assets
