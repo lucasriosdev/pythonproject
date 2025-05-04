@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FinViz - Financial Data Visualization Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <span class="logo-icon">📊</span>
+                <h1>FinViz</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#dashboard" class="active">Dashboard</a></li>
+                    <li><a href="#stocks">Stocks</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#about">About</a></li>
+                </ul>
+            </nav>
+            <div class="user-menu">
+                <div class="search-box">
+                    <input type="text" id="stock-search" placeholder="Search stocks...">
+                    <button id="search-btn">🔍</button>
+                </div>
+                <div class="theme-toggle">
+                    <span>🌙</span>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <section class="dashboard-header">
+                <h2>Financial Dashboard</h2>
+                <p>Real-time market insights and portfolio analysis</p>
+                <div class="stock-selector">
+                    <label for="stock-symbol">Stock Symbol:</label>
+                    <select id="stock-symbol">
+                        <option value="AAPL">Apple (AAPL)</option>
+                        <option value="MSFT">Microsoft (MSFT)</option>
+                        <option value="GOOGL">Google (GOOGL)</option>
+                        <option value="AMZN">Amazon (AMZN)</option>
+                        <option value="META">Meta (META)</option>
+                    </select>
+                    <label for="time-period">Time Period:</label>
+                    <select id="time-period">
+                        <option value="7">1 Week</option>
+                        <option value="30" selected>1 Month</option>
+                        <option value="90">3 Months</option>
+                        <option value="180">6 Months</option>
+                        <option value="365">1 Year</option>
+                    </select>
+                    <button id="update-btn">Update</button>
+                </div>
+            </section>
+
+            <div class="dashboard-grid">
+                <div class="card stock-price">
+                    <h3>Stock Price</h3>
+                    <div id="price-chart" class="chart-container"></div>
+                </div>
+                
+                <div class="card stock-volume">
+                    <h3>Trading Volume</h3>
+                    <div id="volume-chart" class="chart-container"></div>
+                </div>
+                
+                <div class="card economic-indicators">
+                    <h3>Economic Indicators</h3>
+                    <div class="indicators-grid">
+                        <div id="gdp_growth" class="indicator-chart"></div>
+                        <div id="unemployment" class="indicator-chart"></div>
+                        <div id="inflation" class="indicator-chart"></div>
+                        <div id="interest_rate" class="indicator-chart"></div>
+                        <div id="consumer_confidence" class="indicator-chart"></div>
+                    </div>
+                </div>
+                
+                <div class="card industry-performance">
+                    <h3>Industry Performance</h3>
+                    <div id="industry-chart" class="chart-container"></div>
+                </div>
+                
+                <div class="card portfolio-allocation">
+                    <h3>Portfolio Allocation</h3>
+                    <div id="allocation-chart" class="chart-container"></div>
+                </div>
+                
+                <div class="card risk-analysis">
+                    <h3>Risk Analysis</h3>
+                    <div class="risk-metrics">
+                        <div class="metric">
+                            <span class="metric-name">Volatility</span>
+                            <span id="volatility" class="metric-value">--</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-name">Beta</span>
+                            <span id="beta" class="metric-value">--</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-name">Sharpe Ratio</span>
+                            <span id="sharpe" class="metric-value">--</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-name">Alpha</span>
+                            <span id="alpha" class="metric-value">--</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-name">Max Drawdown</span>
+                            <span id="drawdown" class="metric-value">--</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <div class="footer-content">
+                <p>&copy; 2025 FinViz - Financial Data Visualization Dashboard</p>
+                <p>Created by <a href="#" target="_blank">Your Name</a> | <a href="https://github.com/yourusername/finviz" target="_blank">GitHub Repository</a></p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
